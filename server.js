@@ -31,6 +31,12 @@ io.on("connection", function (socket) {
 
     // Effacer le canvas (bug)
     socket.on('reset', function(data){
-        io.sockets.emit('resetbg',{msg: "bgreset"})
+        io.sockets.emit('reset',{msg: "reset"})
     })
+
+    // Remplisage de couleur
+    socket.on('fill', function(data){
+        io.sockets.emits('fill', {msg:"fill"})
+    })
+
 });
